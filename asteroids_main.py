@@ -33,14 +33,14 @@ class GameRunner:
 
     def _game_loop(self):
         self.handle_presses()
-        # self.__ship.move(self.__screen_min_x, self.__screen_max_x,
-        #                  self.__screen_min_y, self.__screen_max_y)
+        self.__ship.move(self.__screen_min_x, self.__screen_max_x,
+                         self.__screen_min_y, self.__screen_max_y)
         self.__screen.draw_ship(self.__ship.get_location()[0],
                                 self.__ship.get_location()[1],
                                 self.__ship.get_direction())
 
     def init_ship(self):
-        loc_x = random.randint(self.__screen_max_x, self.__screen_max_x)
+        loc_x = random.randint(self.__screen_min_x, self.__screen_max_x)
         loc_y = random.randint(self.__screen_min_y, self.__screen_max_y)
         return Ship(loc_x, loc_y)
 
@@ -51,8 +51,8 @@ class GameRunner:
             self.__ship.turn_right()
         if self.__screen.is_up_pressed():
             self.__ship.accelerate()
-            self.__ship.move(self.__screen_min_x, self.__screen_max_x,
-                             self.__screen_min_y, self.__screen_max_y)
+            # self.__ship.move(self.__screen_min_x, self.__screen_max_x,
+            #                  self.__screen_min_y, self.__screen_max_y)
 
 
 
