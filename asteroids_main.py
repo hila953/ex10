@@ -78,6 +78,7 @@ class GameRunner:
                     if new_1 and new_2:
                         self.add_asteroid(new_1)
                         self.add_asteroid(new_2)
+
                     self.remove_torpedo(torpedo)
 
     def ship_hit(self):
