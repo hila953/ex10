@@ -14,6 +14,7 @@ class Ship(GameObject):
 
     def hit(self):
         self.lives -= 1
+        return self.lives
 
     def get_lives(self):
         return self.lives

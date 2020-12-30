@@ -39,3 +39,13 @@ class GameObject:
 
     def get_location(self):
         return self.loc_x, self.loc_y
+
+
+    def move(self, min_x, max_x, min_y, max_y):
+        self.loc_x = min_x +\
+                    (self.loc_x + self.speed_x - min_x)%\
+                    (max_x - min_x)
+
+        self.loc_y = min_y +\
+                    (self.loc_y + self.speed_y - min_y)%\
+                    (max_y - min_y)
